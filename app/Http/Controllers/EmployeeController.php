@@ -14,7 +14,8 @@ class EmployeeController extends Controller
     public function index()
     {
         //
-        return view('employee.index');
+        $employees=Employee::all();
+        return view('employee.index',compact('employees'));
     }
 
     /**
@@ -48,7 +49,7 @@ class EmployeeController extends Controller
         $employee->date_of_birth=$dob;
         $employee->basic_salary=$bs;
         $employee->save();
-        return $lna."".$fna."".$dob."".$bs;
+        return redirect()->route('employees.index');
     }
 
     /**
