@@ -15,7 +15,8 @@ class StudentController extends Controller
     public function index()
     {
         //
-        return view('student/index');
+        $students=Student::all();
+        return view('student.index',compact('students'));
     }
 
     /**
@@ -45,7 +46,7 @@ class StudentController extends Controller
         $student->first_name=$fna;
         $student->last_name=$lna;
         $student->save();
-        return $lna."".$fna;
+        return redirect()->route('students.index');
     }
 
     /**
