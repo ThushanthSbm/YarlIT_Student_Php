@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Student Show Details</h1>
-    <h3>First Name: {{ $student->first_name}}</h3>
-    <h3>Last Name: {{ $student->last_name}}</h3>
+    <h3>First Name: {{$student->first_name}}</h3>
+    <h3>Last Name: {{$student->last_name}}</h3>
 </body>
 </html>
