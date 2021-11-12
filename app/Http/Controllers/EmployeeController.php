@@ -61,7 +61,9 @@ class EmployeeController extends Controller
     public function show($id)
     {
         //
-        return view('employee.show');
+        $employee = Employee::find($id);
+        // return $employee;
+        return view('employee.show' ,compact('employee'));
     }
 
     /**
