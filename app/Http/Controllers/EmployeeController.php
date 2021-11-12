@@ -75,7 +75,9 @@ class EmployeeController extends Controller
     public function edit($id)
     {
         //
-        return view('employee.edit');
+        $employee = Employee::find($id);
+        // return $employee;
+        return view('employee.edit' ,['employee' => $employee]);
     }
 
     /**
@@ -88,6 +90,19 @@ class EmployeeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $fna = $request->input('fname');
+        $lna = $request->input('lname');
+        $dob = $request->input('birthday');
+        $bs = $request->input('bsalary');
+
+        $employee = Employee::find($id);
+        $employee->first_name=$fna;
+        $employee->last_name=$lna;
+        $employee->date_of_birth=$dob;
+        $employee->basic_salary=$bs;
+        $employee->save();
+
+        return $fna."".$lna."".$dob."".$bs;
     }
 
     /**
