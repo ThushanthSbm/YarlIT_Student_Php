@@ -16,13 +16,14 @@
     <br>
     @endforeach
     <table border="1">
-        <tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Show</th></tr>
+        <tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Show</th><th>Edit</th></tr>
     @foreach ($students as $student)
     <tr>
    <td> {{$student->id}}</td>
    <td> {{$student->first_name}}</td>
     <td>{{$student->last_name}}</td>
     <td><a href="{{route('students.show' ,$student->id)}}">Show</a></td>
+    <td><a href="{{route('students.edit' ,$student->id)}}">Edit</a></td>
     </tr>
     @endforeach
     </table>
