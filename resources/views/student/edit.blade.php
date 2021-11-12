@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Student Edit Details</h1>
 <form action ="{{route('students.update' ,$student->id)}}" method = "POST">
 
 @csrf
