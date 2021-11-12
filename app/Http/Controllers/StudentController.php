@@ -46,7 +46,7 @@ class StudentController extends Controller
         $student->first_name=$fna;
         $student->last_name=$lna;
         $student->save();
-        return redirect()->route('students.index');
+        return redirect()->route('student.index');
     }
 
     /**
@@ -58,7 +58,9 @@ class StudentController extends Controller
     public function show($id)
     {
         //
-        return view('student/show');
+       $student = Student::find($id);
+        // return $student;
+        return view('student.show' ,compact('student'));
     }
 
     /**
