@@ -27,11 +27,11 @@
 <textarea name="address" id="address" cols="30" rows="5"></textarea>
 <br><br>
 <label for="subject">Subjects</label><br>
-<input type="checkbox" id="Science" name="Science" value="Science">
+<input type="checkbox" id="Science" name="subject[]" value="Science">
 <label for="Science"> Science</label>
-<input type="checkbox" id="Tamil" name="Tamil" value="Tamilr">
+<input type="checkbox" id="Tamil" name="subject[]" value="Tamil">
 <label for="Tamil"> Tamil</label>
-<input type="checkbox" id="English" name="English" value="English">
+<input type="checkbox" id="English" name="subject[]" value="English">
 <label for="English"> English</label>
 <br><br>
 <label for="birthday">Birthday:</label>
@@ -41,7 +41,7 @@
 <input type="email" id="email" name="email">
 <br><br>
 <label for="phone">Enter your phone number:</label>
-<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+<input type="phone" id="phone" name="phone" >
 <br><br>
 <input type="submit" value="Save">
 </form>

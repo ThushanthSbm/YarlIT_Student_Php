@@ -42,11 +42,25 @@ class StudentController extends Controller
         $data=$request->all();
         $fna=$request->input('fname');
         $lna=$request->input('lname');
+        $gen=$request->input('gender');
+        $gr=$request->input('grade');
+        $add=$request->input('address');
+        $sub=$request->input('subject');
+        $dob=$request->input('birthday');
+        $ma=$request->input('email');
+        $ph=$request->input('phone');
         $student=new Student();
         $student->first_name=$fna;
         $student->last_name=$lna;
+        $student->gender=$gen;
+        $student->grade=$gr;
+        $student->address=$add;
+        $student->subject =implode(',' ,$request->subject);
+        $student->date_of_birth=$dob;
+        $student->mail=$ma;
+        $student->phone=$ph;
         $student->save();
-        return redirect()->route('student.index');
+        return redirect()->route('students.index');
     }
 
     /**
@@ -89,14 +103,30 @@ class StudentController extends Controller
         //
         $fna = $request->input('fname');
         $lna = $request->input('lname');
+        $lna=$request->input('lname');
+        $gen=$request->input('gender');
+        $gr=$request->input('grade');
+        $add=$request->input('address');
+        $sub=$request->input('subject');
+        $dob=$request->input('birthday');
+        $ma=$request->input('email');
+        $ph=$request->input('phone');
 
         $student = Student::find($id);
+
         $student->first_name=$fna;
         $student->last_name=$lna;
+        $student->gender=$gen;
+        $student->grade=$gr;
+        $student->address=$add;
+        $student->subject =implode(',' ,$request->subject);
+        $student->date_of_birth=$dob;
+        $student->mail=$ma;
+        $student->phone=$ph;
         $student->save();
 
-        return $fna."".$lna;
-       // return redirect()->route('student.index');
+        //
+        return redirect()->route('students.index');
 
 
     }

@@ -44,8 +44,9 @@
 </select>
 <br><br>
 <label for="address">Address</label>
-<textarea name="address" id="address" cols="30" rows="5"value="{{$student->address}}"></textarea>
+<textarea name="address" id="address" cols="30" rows="5" value="{{$student->address}}"></textarea>
 <br><br>
+<?php $sub=explode(',',$student->subject)?>
 <label for="subject">Subjects</label><br>
 <input type="checkbox" id="Science" name="subject[]" value="Science"<?php
     if(in_Array('Science',$sub)){
@@ -73,7 +74,7 @@
 <input type="email" id="email" name="email"value="{{$student->mail}}">
 <br><br>
 <label for="phone">Enter your phone number:</label>
-<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"value="{{$student->phone}}">
+<input type="tel" id="phone" name="phone" value="{{$student->phone}}">
 <br><br>
 <input type="submit" value="Save">
 <a href="{{route('students.index')}}">Show All</a>
