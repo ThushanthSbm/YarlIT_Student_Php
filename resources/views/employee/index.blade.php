@@ -18,7 +18,7 @@
     <br>
     @endforeach
     <table border="1">
-        <tr><th>ID</th><th>First Nmae</th><th>Last Name</th><th>Birth Of date</th><th>Basic Salary</th><th>Show</th><th>Edit</th></tr>
+        <tr><th>ID</th><th>First Nmae</th><th>Last Name</th><th>Birth Of date</th><th>Basic Salary</th><th>Show</th><th>Edit</th><th>Delete</th></tr>
     @foreach ($employees as $employee)
     <tr>
    <td> {{$employee->id}}</td>
@@ -28,6 +28,12 @@
    <td> {{$employee->basic_salary}}</td>
    <td><a href="{{route('employees.show' ,$employee->id)}}">Show</a></td>
    <td><a href="{{route('employees.edit' ,$employee->id)}}">Edit</a></td>
+   <td>
+        <form action="{{route('employees.destroy' ,$employee->id)}}" method="POST">
+            @csrf 
+            @method('delete')
+        <input type="submit" value="Delete">
+</form></td>
     </tr>
     @endforeach
     </table>
