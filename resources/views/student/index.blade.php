@@ -39,7 +39,7 @@
     <td><a href="{{route('students.show' ,$student->id)}}">Show</a></td>
     <td><a href="{{route('students.edit' ,$student->id)}}">Edit</a></td>
     <td>
-        <form action="{{route('students.destroy' ,$student->id)}}" method="POST">
+        <form action="{{route('students.destroy' ,$student->id)}}" method="POST" onclick="return confirm('Do U Want Remove')">
             @csrf 
             @method('delete')
         <input type="submit" value="Delete">
@@ -47,6 +47,13 @@
     </tr>
     @endforeach
     </table>
+    <form>
+    <a href="{{route('students.create' ,$student->id)}}">Create</a>
+    <a href="{{route('students.create' ,$student->id)}}" class="previous">&laquo; Previous</a>
+<a href="#" class="next">Next &raquo;</a>
 
+<a href="{{route('students.create' ,$student->id)}}" class="previous round">&#8249;</a>
+<a href="#" class="next round">&#8250;</a>
+</form>
 </body>
 </html>

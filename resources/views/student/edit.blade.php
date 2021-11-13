@@ -64,7 +64,7 @@
     if(in_Array('English',$sub)){
        echo'checked';
     }
-    ?> >
+    ?> ><br><br>
 <label for="English"> English</label>
 <br><br>
 <label for="birthday">Birthday:</label>
@@ -78,6 +78,9 @@
 <br><br>
 <input type="submit" value="Save">
 <a href="{{route('students.index')}}">Show All</a>
+<a href="#" class="previous">&laquo; Previous</a>
+<a href="#" class="next">Next &raquo;</a>
+
 </form>
 </body>
 </html>

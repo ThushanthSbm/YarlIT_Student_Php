@@ -17,5 +17,14 @@
     <h3>Date Of Birth: {{$student->date_of_birth}}</h3>
     <h3>Email: {{$student->mail}}</h3>
     <h3>Mobile No: {{$student->phone}}</h3>
+    <form >
+        <a href="{{route('students.create' ,$student->id)}}">Create</a>
+        <a href="{{route('students.index' ,$student->id)}}">Index</a>
+        <a href="#" class="previous">&laquo; Previous</a>
+<a href="#" class="next">Next &raquo;</a>
+
+<a href="#" class="previous round">&#8249;</a>
+<a href="#" class="next round">&#8250;</a>
+</form>
 </body>
 </html>
