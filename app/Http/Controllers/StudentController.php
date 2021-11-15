@@ -45,7 +45,7 @@ class StudentController extends Controller
         $gen=$request->input('gender');
         $gr=$request->input('grade');
         $add=$request->input('address');
-        $sub=$request->input('subject');
+      //  $sub=$request->input('subject');
         $dob=$request->input('birthday');
         $ma=$request->input('email');
         $ph=$request->input('phone');

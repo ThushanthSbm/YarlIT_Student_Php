@@ -46,7 +46,9 @@
 <label for="address">Address</label>
 <textarea name="address" id="address" cols="30" rows="5" onkeyPress class="form-control">{{{$student->address}}}</textarea>
 <br><br>
+    {{ $student->subject}}
 <?php $sub=explode(',',$student->subject)?>
+<?php print_r($sub) ?>
 <label for="subject">Subjects</label><br>
 <input type="checkbox" id="Science" name="subject[]" value="Science"<?php
     if(in_Array('Science',$sub)){

@@ -45,9 +45,5 @@
 <br><br>
 <input type="submit" value="Save">
 
-<a href="#" class="previous">&laquo; Previous</a>
-<a href="#" class="next">Next &raquo;</a>
 
-<a href="#" class="previous round">&#8249;</a>
-<a href="#" class="next round">&#8250;</a>
 </form>
