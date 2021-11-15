@@ -44,7 +44,7 @@
 </select>
 <br><br>
 <label for="address">Address</label>
-<textarea name="address" id="address" cols="30" rows="5" value="{{$student->address}}"></textarea>
+<textarea name="address" id="address" cols="30" rows="5" onkeyPress class="form-control">{{{$student->address}}}</textarea>
 <br><br>
 <?php $sub=explode(',',$student->subject)?>
 <label for="subject">Subjects</label><br>
@@ -64,7 +64,7 @@
     if(in_Array('English',$sub)){
        echo'checked';
     }
-    ?> ><br><br>
+    ?> >
 <label for="English"> English</label>
 <br><br>
 <label for="birthday">Birthday:</label>
