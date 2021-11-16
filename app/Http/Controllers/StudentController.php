@@ -45,22 +45,25 @@ class StudentController extends Controller
         $gen=$request->input('gender');
         $gr=$request->input('grade');
         $add=$request->input('address');
-      //  $sub=$request->input('subject');
+        $sub=$request->input('subject');
 
     
 
 
-     //   $dob=$request->input('birthday');
+       $dob=$request->input('birthday');
+
         $ma=$request->input('email');
         $ph=$request->input('phone');
         $student=new Student();
+
+        $validated = $request->validate(['birthday' =>'required|date|before:-18years',]);
         $student->first_name=$fna;
         $student->last_name=$lna;
         $student->gender=$gen;
         $student->grade=$gr;
         $student->address=$add;
         $student->subject =implode(',' ,$request->subject);
-     //   $student->date_of_birth=$dob;
+        $student->date_of_birth=$dob;
         $student->mail=$ma;
         $student->phone=$ph;
         $student->save();

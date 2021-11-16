@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+@if($errors->any())
+       @foreach($errors->all() as $error)
+              {{$error}} 
+       @endforeach
+  @endif
     <h1>Student Edit Details</h1>
 <form action ="{{route('students.update' ,$student->id)}}" method = "POST">
 
