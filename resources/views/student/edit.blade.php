@@ -16,7 +16,7 @@
 <input type ="text" name="fname" id="fname" value="{{$student->first_name}}">
 <br><br>
 <label for="lname">Last Name</label>
-<input type ="text" name="lname" id="lname" value="{{$student->last_name}}">
+<input type ="text" name="lname" id="lname" value="{{$student->last_name}}"><br><br>
 <label for ="gender">Gender:</label>
 <input type="radio" id="male" name="gender" value="male"<?php if($student-> gender=="male"){ 
         echo "checked";

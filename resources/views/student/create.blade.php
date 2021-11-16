@@ -35,7 +35,7 @@
 <label for="English"> English</label>
 <br><br>
 <label for="birthday">Birthday:</label>
-<input type="date" id="birthday" name="birthday">
+<input type="date" id="birthday" name="birthday" >
 <br><br>
 <label for="email">Enter your email:</label>
 <input type="email" id="email" name="email">

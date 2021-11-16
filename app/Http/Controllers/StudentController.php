@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Student;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -46,7 +46,11 @@ class StudentController extends Controller
         $gr=$request->input('grade');
         $add=$request->input('address');
       //  $sub=$request->input('subject');
-        $dob=$request->input('birthday');
+
+    
+
+
+     //   $dob=$request->input('birthday');
         $ma=$request->input('email');
         $ph=$request->input('phone');
         $student=new Student();
@@ -56,7 +60,7 @@ class StudentController extends Controller
         $student->grade=$gr;
         $student->address=$add;
         $student->subject =implode(',' ,$request->subject);
-        $student->date_of_birth=$dob;
+     //   $student->date_of_birth=$dob;
         $student->mail=$ma;
         $student->phone=$ph;
         $student->save();
