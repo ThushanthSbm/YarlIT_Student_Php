@@ -47,9 +47,6 @@ class StudentController extends Controller
         $add=$request->input('address');
         $sub=$request->input('subject');
 
-    
-
-
        $dob=$request->input('birthday');
 
         $ma=$request->input('email');
