@@ -2,6 +2,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -31,3 +32,4 @@ Route::get('/students',[StudentController::class,'index']);
 
 Route::resource('students', StudentController::class);
 Route::resource('employees', EmployeeController::class);
+Route::resource('grades', GradeController::class);
