@@ -4,6 +4,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\PhoneController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
@@ -35,3 +36,4 @@ Route::resource('students', StudentController::class);
 Route::resource('employees', EmployeeController::class);
 Route::resource('grades', GradeController::class);
 Route::resource('subjects', SubjectController::class);
+Route::resource('phones', PhoneController::class);
