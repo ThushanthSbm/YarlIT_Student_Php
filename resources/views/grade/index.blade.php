@@ -24,5 +24,8 @@
     </tr>
     @endforeach
     </table>
+    <form>
+    <a href="{{route('grades.create' ,$grade->id)}}">Create</a>
+    </form>
 </body>
 </html>

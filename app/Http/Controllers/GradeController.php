@@ -102,6 +102,6 @@ class GradeController extends Controller
         //
         $grade = Grade::find($id);
         $grade->delete();
-        return"delete";
+        return redirect()->route('grades.index');
     }
 }
