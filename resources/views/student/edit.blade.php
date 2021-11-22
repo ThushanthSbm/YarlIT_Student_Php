@@ -81,7 +81,7 @@
 <input type="email" id="email" name="email"value="{{$student->mail}}">
 <br><br>
 <label for="phone">Enter your phone number:</label>
-<input type="tel" id="phone" name="phone" value="{{$student->phone}}">
+<input type="tel" id="phone" name="phone" value="{{$student->phone_id}}">
 <br><br>
 <input type="submit" value="Save">
 <a href="{{route('students.index')}}">Show All</a>

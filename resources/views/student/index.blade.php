@@ -19,7 +19,7 @@
     {{$student->subject}}
     {{$student->date_of_birth}}
     {{$student->mail}}
-    {{$student->phone}}
+    {{$student->phone_id}}
     <br>
     @endforeach
     <table border="1">
@@ -35,7 +35,7 @@
     <td>{{$student->subject}}</td>
     <td>{{$student->date_of_birth}}</td>
     <td>{{$student->mail}}</td>
-    <td>{{$student->phone}}</td>
+    <td>{{$student->phone_id}}</td>
     <td><a href="{{route('students.show' ,$student->id)}}">Show</a></td>
     <td><a href="{{route('students.edit' ,$student->id)}}">Edit</a></td>
     <td>

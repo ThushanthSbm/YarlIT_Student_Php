@@ -62,7 +62,7 @@ class StudentController extends Controller
         $student->subject =implode(',' ,$request->subject);
         $student->date_of_birth=$dob;
         $student->mail=$ma;
-        $student->phone=$ph;
+        $student->phone_id=$ph;
         $student->save();
         return redirect()->route('students.index');
     }
@@ -126,7 +126,7 @@ class StudentController extends Controller
         $student->subject =implode(',' ,$request->subject);
         $student->date_of_birth=$dob;
         $student->mail=$ma;
-        $student->phone=$ph;
+        $student->phone_id=$ph;
         $student->save();
 
         //

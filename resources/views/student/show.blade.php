@@ -16,7 +16,7 @@
     <h3>Subject: {{$student->subject}}</h3>
     <h3>Date Of Birth: {{$student->date_of_birth}}</h3>
     <h3>Email: {{$student->mail}}</h3>
-    <h3>Mobile No: {{$student->phone}}</h3>
+    <h3>Mobile No: {{$student->phone_id}}</h3>
     <form >
         <a href="{{route('students.create' ,$student->id)}}">Create</a>
         <a href="{{route('students.index' ,$student->id)}}">Index</a>

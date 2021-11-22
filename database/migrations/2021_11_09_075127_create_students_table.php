@@ -23,7 +23,7 @@ class CreateStudentsTable extends Migration
             $table->string('subject');
             $table->date('date_of_birth');
             $table->string('mail');
-            $table->integer('phone');
+            $table->integer('phone_id');
             $table->timestamps();
         });
     }
