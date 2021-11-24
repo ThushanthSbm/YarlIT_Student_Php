@@ -34,16 +34,16 @@
 <br><br>
 <label for="grade">Select Grade</label>
 <select name="grade" id="grade">
-  <option value="10A"<?php if($student-> grade=="10B"){ 
+  <option value="10A"<?php if($student-> grade_id=="10B"){ 
         echo "selected";
        } ?>>10A</option>
-  <option value="10B"<?php if($student-> grade=="10B"){ 
+  <option value="10B"<?php if($student-> grade_id=="10B"){ 
         echo "selected";
        } ?>>10B</option>
-  <option value="10C"<?php if($student-> grade=="10B"){ 
+  <option value="10C"<?php if($student-> grade_id=="10B"){ 
         echo "selected";
        } ?>>10C</option>
-  <option value="10D"<?php if($student-> grade=="10B"){ 
+  <option value="10D"<?php if($student-> grade_id=="10B"){ 
         echo "selected";
        } ?>>10D</option>
 </select>

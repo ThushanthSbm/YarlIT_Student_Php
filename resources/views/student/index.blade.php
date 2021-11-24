@@ -14,7 +14,7 @@
     {{$student->first_name}}
     {{$student->last_name}}
     {{$student->gender}}
-    {{$student->grade}}
+    {{$student->grade_id}}
     {{$student->address}}
     {{$student->subject}}
     {{$student->date_of_birth}}
@@ -30,7 +30,7 @@
    <td> {{$student->first_name}}</td>
     <td>{{$student->last_name}}</td>
     <td>{{$student->gender}}</td>
-    <td>{{$student->grade}}</td>
+    <td>{{$student->grade_id}}</td>
     <td>{{$student->address}}</td>
     <td>{{$student->subject}}</td>
     <td>{{$student->date_of_birth}}</td>

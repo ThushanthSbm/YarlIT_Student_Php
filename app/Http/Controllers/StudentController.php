@@ -57,7 +57,7 @@ class StudentController extends Controller
         $student->first_name=$fna;
         $student->last_name=$lna;
         $student->gender=$gen;
-        $student->grade=$gr;
+        $student->grade_id=$gr;
         $student->address=$add;
         $student->subject =implode(',' ,$request->subject);
         $student->date_of_birth=$dob;
@@ -121,7 +121,7 @@ class StudentController extends Controller
         $student->first_name=$fna;
         $student->last_name=$lna;
         $student->gender=$gen;
-        $student->grade=$gr;
+        $student->grade_id=$gr;
         $student->address=$add;
         $student->subject =implode(',' ,$request->subject);
         $student->date_of_birth=$dob;
