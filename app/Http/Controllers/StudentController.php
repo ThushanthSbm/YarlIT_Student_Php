@@ -45,7 +45,7 @@ class StudentController extends Controller
         $gen=$request->input('gender');
         $gr=$request->input('grade');
         $add=$request->input('address');
-        $sub=$request->input('subject');
+        $sub=$request->input('subject_id');
 
        $dob=$request->input('birthday');
 
@@ -59,7 +59,7 @@ class StudentController extends Controller
         $student->gender=$gen;
         $student->grade_id=$gr;
         $student->address=$add;
-        $student->subject =implode(',' ,$request->subject);
+        $student->subject_id =implode(',' ,$request->subject);
         $student->date_of_birth=$dob;
         $student->mail=$ma;
         $student->phone_id=$ph;
@@ -111,19 +111,19 @@ class StudentController extends Controller
         $gen=$request->input('gender');
         $gr=$request->input('grade');
         $add=$request->input('address');
-        $sub=$request->input('subject');
+        $sub=$request->input('subject_id');
         $dob=$request->input('birthday');
         $ma=$request->input('email');
         $ph=$request->input('phone');
 
         $student = Student::find($id);
 
-        $student->first_name=$fna;
+        $student->first_name=$fna; 
         $student->last_name=$lna;
         $student->gender=$gen;
         $student->grade_id=$gr;
         $student->address=$add;
-        $student->subject =implode(',' ,$request->subject);
+        $student->subject_id =implode(',' ,$request->subject);
         $student->date_of_birth=$dob;
         $student->mail=$ma;
         $student->phone_id=$ph;
