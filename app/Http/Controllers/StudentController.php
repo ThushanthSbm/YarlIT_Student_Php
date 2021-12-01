@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Student;
+use App\Models\Grade;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,8 @@ class StudentController extends Controller
     public function create()
     {
         //
-        return view('student/create');
+        $grade=Grade::all();
+        return view('student/create',compact('grades'));
     }
 
     /**

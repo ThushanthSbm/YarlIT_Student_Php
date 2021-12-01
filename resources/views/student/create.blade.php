@@ -28,11 +28,11 @@
 <label for="female">Female</label>
 <br><br>
 <label for="grade">Select Grade</label>
+
 <select name="grade" id="grade">
-  <option value="10A">10A</option>
-  <option value="10B">10B</option>
-  <option value="10C">10C</option>
-  <option value="10D">10D</option>
+  @foreach($grades as $grade)
+  <option value="{{$grade->id}}">{{$grade->grade_name}}</option>
+  @endforeach
 </select>
 <br><br>
 <label for="address">Address</label>
