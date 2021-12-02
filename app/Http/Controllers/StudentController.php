@@ -28,7 +28,7 @@ class StudentController extends Controller
     public function create()
     {
         //
-        $grade=Grade::all();
+        $grades=Grade::all();
         return view('student/create',compact('grades'));
     }
 
