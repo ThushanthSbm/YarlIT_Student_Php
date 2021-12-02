@@ -34,45 +34,29 @@
 <br><br>
 <label for="grade">Select Grade</label>
 <select name="grade" id="grade">
-  <option value="10A"<?php if($student-> grade_id=="10B"){ 
-        echo "selected";
-       } ?>>10A</option>
-  <option value="10B"<?php if($student-> grade_id=="10B"){ 
-        echo "selected";
-       } ?>>10B</option>
-  <option value="10C"<?php if($student-> grade_id=="10B"){ 
-        echo "selected";
-       } ?>>10C</option>
-  <option value="10D"<?php if($student-> grade_id=="10B"){ 
-        echo "selected";
-       } ?>>10D</option>
+@foreach($grades as $grade)
+  <option value="{{$grade->grade_name}}"{{($student->grade_id === "$grade->grade_name") ? 'Selected' : ''}}>{{$grade->grade_name}}</option>
+
+  @endforeach
 </select>
 <br><br>
 <label for="address">Address</label>
 <textarea name="address" id="address" cols="30" rows="5" onkeyPress class="form-control">{{{$student->address}}}</textarea>
 <br><br>
-    {{ $student->subject_id}}
+    <!-- {{ $student->subject_id}} -->
 <?php $sub=explode(',',$student->subject_id)?>
-<?php print_r($sub) ?>
+
 <label for="subject">Subjects</label><br>
-<input type="checkbox" id="Science" name="subject[]" value="Science"<?php
-    if(in_Array('Science',$sub)){
+@foreach($subjects as $subject)
+
+<input type="checkbox" id="subject" name="subject[]" value="{{$subject->subject_name}}"<?php
+    if(in_Array('$subject->subject_name',$sub)){
        echo'checked';
     }
     ?> >
-<label for="Science"> Science</label>
-<input type="checkbox" id="Tamil" name="subject[]" value="Tamil"<?php
-    if(in_Array('Tamil',$sub)){
-       echo'checked';
-    }
-    ?> >
-<label for="Tamil"> Tamil</label>
-<input type="checkbox" id="English" name="subject[]" value="English"<?php
-    if(in_Array('English',$sub)){
-       echo'checked';
-    }
-    ?> >
-<label for="English"> English</label>
+<label for="subject"> {{$subject->subject_name}}</label>
+@endforeach
+
 <br><br>
 <label for="birthday">Birthday:</label>
 <input type="date" id="birthday" name="birthday"value="{{$student->date_of_birth}}">

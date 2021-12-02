@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Student;
 use App\Models\Grade;
+use App\Models\Subject;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,8 @@ class StudentController extends Controller
     {
         //
         $grades=Grade::all();
-        return view('student/create',compact('grades'));
+        $subjects=Subject::all();
+        return view('student/create',compact('grades','subjects'));
     }
 
     /**
@@ -92,9 +94,12 @@ class StudentController extends Controller
     public function edit($id)
     {
         //
+        
         $student = Student::find($id);
+        $grades=Grade::all();
+        $subjects=Subject::all();
         // return $student;
-        return view('student.edit' ,['student' => $student]);
+        return view('student.edit',compact('student','grades','subjects'));
     }
 
     /**
@@ -113,7 +118,7 @@ class StudentController extends Controller
         $gen=$request->input('gender');
         $gr=$request->input('grade');
         $add=$request->input('address');
-        $sub=$request->input('subject_id');
+        $sub=$request->input('subject');
         $dob=$request->input('birthday');
         $ma=$request->input('email');
         $ph=$request->input('phone');

@@ -31,7 +31,7 @@
 
 <select name="grade" id="grade">
   @foreach($grades as $grade)
-  <option value="{{$grade->id}}">{{$grade->grade_name}}</option>
+  <option value="{{$grade->grade_name}}">{{$grade->grade_name}}</option>
   @endforeach
 </select>
 <br><br>
@@ -39,12 +39,16 @@
 <textarea name="address" id="address" cols="30" rows="5"></textarea>
 <br><br>
 <label for="subject">Subjects</label><br>
-<input type="checkbox" id="Science" name="subject[]" value="Science">
+@foreach($subjects as $subject)
+<input type="checkbox" id="subject" name="subject[]" value="{{$subject->subject_name}}">
+<label for="subject"> {{$subject->subject_name}}</label>
+@endforeach
+<!-- <input type="checkbox" id="Science" name="subject[]" value="Science">
 <label for="Science"> Science</label>
 <input type="checkbox" id="Tamil" name="subject[]" value="Tamil">
 <label for="Tamil"> Tamil</label>
 <input type="checkbox" id="English" name="subject[]" value="English">
-<label for="English"> English</label>
+<label for="English"> English</label> -->
 <br><br>
 <label for="birthday">Birthday:</label>
 <input type="date" id="birthday" name="birthday" >
