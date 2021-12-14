@@ -23,15 +23,21 @@ class StudentSubjectController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create($id)
     {
-        $student=Student::find($request->student);
-        $subjects=Subject::all();
-        return view('studentsubject/create',compact('student','subjects'));
-
+        // $subjects=Subject::all();
+        // return view('student_subject/create', compact('subjects'));
         
     }
 
+    public function crea($id){
+      
+        $studentSubjects=Student::find($id)->subjects; 
+      
+        $studentid=$id;
+        $subjects=Subject::all();
+        return view('studentsubject/create', compact('subjects','studentid','studentSubjects'));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -41,13 +47,13 @@ class StudentSubjectController extends Controller
      */
     public function store(Request $request)
     {
-        $student=Student::find($request->student);
-        $subjects=$request->subject;
+        $studentid=$request->studentid;
+        $subject = $request->subject;
 
-        $student->subjects()->attach($subjects);
+        $student=Student::find($studentid);
+        $student->subjects()->sync($subject);
         
-      return $subjects;
-
+        return redirect('students');
     }
 
     /**
@@ -59,7 +65,8 @@ class StudentSubjectController extends Controller
     public function show($id)
     {
      
-        
+        $student_Subjects=Student::find($id)->subjects;
+       return view('studentsubject/show',compact('student_Subjects'));
     }
 
     /**
@@ -83,7 +90,6 @@ class StudentSubjectController extends Controller
     public function update(Request $request, $id)
     {
         //
-      
     }
 
     /**

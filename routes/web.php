@@ -39,4 +39,4 @@ Route::resource('grades', GradeController::class);
 Route::resource('subjects', SubjectController::class);
 Route::resource('phones', PhoneController::class);
 Route::resource('studentSubjects',StudentSubjectController::class);
-
+Route::get('studentSubjects/crea/{id}',[StudentSubjectController::class,'crea'])->name('studentSubjects.crea');

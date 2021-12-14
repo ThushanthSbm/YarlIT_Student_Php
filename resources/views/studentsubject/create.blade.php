@@ -1,28 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<form action="{{route('studentSubjects.store')}}" method="post" >
+            @csrf
 
-<form action="{{route('studentsSubjects.store',$student->id)}}" method="post">
-    @csrf
+
+                <input type="text" name="studentid" value="{{$studentid}}">
+
+
+                <label>Subject: </label>
 
                 @foreach($subjects as $subject)
 
-                <label for="{{$subject->id}}" >
-                    <input  type="checkbox"  name="subject[]" id="{{$subject->id}}" value="{{$subject->id}}">{{$subject->subject_name}}
-                    </label>                                                                                                                     
-                  <br>
+                <div class="form-check">
+                    <input  type="checkbox" id="  {{ $subject->id }}" name="subject[]" value="  {{ $subject->id }}" <?php
+                                                                                                                                            foreach ($studentSubjects as $stuSubject) {
+                                                                                                                                                if ($subject->subject_name == $stuSubject->subject_name) {
+                                                                                                                                                    echo "checked";
+                                                                                                                                                }
+                                                                                                                                            }
+
+                                                                                                                                            ?>>
+                    <label  for="{{ $subject->id }}">
+                        {{ $subject->subject_name }}
+                    </label>
+                </div>
 
                 @endforeach
 
-                <input  type="submit" >
+              
+<input  type="submit" value="save" >
+               
 
-    </form>
-   
-</body>
-</html>
+
+            
+        </form>
+        <a href="{{route('studentSubjects.show', $studentid)}}" >Show Subject</a>
