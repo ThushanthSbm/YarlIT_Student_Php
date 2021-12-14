@@ -32,7 +32,7 @@
     <td>{{$student->gender}}</td>
     <td>{{$student->grade_id}}</td>
     <td>{{$student->address}}</td>
-    <td><a href="{{route('studentSubjects.create')}}">Add Subject</td>
+    <td>{{$student->subject_id}}</td>
     <td>{{$student->date_of_birth}}</td>
     <td>{{$student->mail}}</td>
     <td>{{$student->phone_id}}</td>
