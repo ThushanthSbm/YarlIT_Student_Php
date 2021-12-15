@@ -43,6 +43,16 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+            'fname' => ['required' ,'min:5'],
+            'lname' => ['required ','min:5'],
+            'gender' => ['required '],
+            'address' => ['required' ,'min:5'],
+            'subject' => ['required','in:1'],
+            'birthday' => ['required','date','before:-18years'],
+            'email' => ['email:rfc,dns'],
+            'phone' => ['required','digits:10'],
+            ]);
         $data=$request->all();
         $fna=$request->input('fname');
         $lna=$request->input('lname');
@@ -57,7 +67,7 @@ class StudentController extends Controller
         $ph=$request->input('phone');
         $student=new Student();
 
-        $validated = $request->validate(['birthday' =>'required|date|before:-18years',]);
+        // $validated = $request->validate(['birthday' =>'required|date|before:-18years',]);
         $student->first_name=$fna;
         $student->last_name=$lna;
         $student->gender=$gen;
