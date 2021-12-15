@@ -80,9 +80,15 @@ class StudentController extends Controller
     public function show($id)
     {
         //
-       $student = Student::find($id);
-        // return $student;
-        return view('student.show' ,compact('student'));
+    //    $student = Student::find($id);
+    //     // return $student;
+    //     return view('student.show' ,compact('student'));
+
+    $student=Student::find($id);
+        $subjects=Subject::all();
+        $student_Subjects=Student::find($id)->subjects;
+       return view('student.show',compact('student','subjects','student_Subjects'));
+       
     }
 
     /**

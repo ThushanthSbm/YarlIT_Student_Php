@@ -7,18 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-<table >
+<table border="1">
         
             <tr>
-                <td>Subjects</td>
+                <td colspan='3'>Subjects</td>
             </tr>
         
        
         @foreach($student_Subjects as $student_subject)
-        <tr>
+       
 
         <td>{{$student_subject->subject_name}}</td>
-        </tr>
+       
         
 
         @endforeach

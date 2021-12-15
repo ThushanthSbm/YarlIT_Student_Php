@@ -13,10 +13,30 @@
     <h3>Gender: {{$student->gender}}</h3>
     <h3>Grade: {{$student->grade_id}}</h3>
     <h3>Address: {{$student->address}}</h3>
-    <h3>Subject: {{$student->subject_id}}</h3>
+    <!-- <h3>Subject: {{$student->subject_id}}</h3> -->
     <h3>Date Of Birth: {{$student->date_of_birth}}</h3>
     <h3>Email: {{$student->mail}}</h3>
     <h3>Mobile No: {{$student->phone_id}}</h3>
+    
+    <table border="1">
+        
+        <tr>
+            <td colspan='3'><b>Subjects</b></td>
+        </tr>
+    
+   
+    @foreach($student_Subjects as $student_subject)
+    
+
+    <td>{{$student_subject->subject_name}}</td>
+    
+    
+
+    @endforeach
+
+  
+
+    </table>
     <form >
         <a href="{{route('students.create' ,$student->id)}}">Create</a>
         <a href="{{route('students.index' ,$student->id)}}">Index</a>

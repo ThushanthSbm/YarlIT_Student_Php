@@ -31,12 +31,12 @@ class StudentSubjectController extends Controller
     }
 
     public function crea($id){
-      
+         $students=Student::find($id);
         $studentSubjects=Student::find($id)->subjects; 
       
         $studentid=$id;
         $subjects=Subject::all();
-        return view('studentsubject/create', compact('subjects','studentid','studentSubjects'));
+        return view('studentsubject/create', compact('students','subjects','studentid','studentSubjects'));
     }
 
     /**

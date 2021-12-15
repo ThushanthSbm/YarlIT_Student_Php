@@ -2,7 +2,8 @@
             @csrf
 
 
-                <input type="text" name="studentid" value="{{$studentid}}">
+                <!-- <input type="text" name="studentid" value="{{$studentid}}"> -->
+                <h3>Student Name : {{$students->first_name}} {{$students->last_name}}</h3>
 
 
                 <label>Subject: </label>
