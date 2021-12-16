@@ -11,7 +11,11 @@
 
 @csrf
 <label for="phone">Enter your phone number:</label>
-<input type="phone" id="phone" name="phone" >
+<input type="phone" id="phone" name="phone" placeholder="type phone no" value ="{{ old('phone')}}" class="@error('phone') is-invalid @enderror" >
+</textarea>
+ @error('phone')
+  <span style="color:red"> {{ $message }}</span>
+@enderror
 <br><br>
 <input type="submit" value="Save">
 </body>

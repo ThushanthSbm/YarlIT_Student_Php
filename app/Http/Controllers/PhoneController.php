@@ -39,6 +39,11 @@ class PhoneController extends Controller
     public function store(Request $request)
     {
         //
+
+        $validatedData = $request->validate([
+            'phone' => ['required','digits:10'],
+            ]);
+
         $data=$request->all();
         $pno=$request->input('phone');
         $phone=new Phone();

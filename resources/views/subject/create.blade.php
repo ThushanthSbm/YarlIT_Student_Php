@@ -11,7 +11,12 @@
 
 @csrf
 <label for="sname">Subject Name</label>
-<input type ="text" name="sname" id="sname">
+<input type ="text" name="sname" id="sname"placeholder="type subject" value ="{{ old('sname')}}" class="@error('sname') is-invalid @enderror" >
+</textarea>
+ @error('sname')
+  <span style="color:red"> {{ $message }}</span>
+@enderror
+<br><br>
 <input type="submit" value="Save">
 </body>
 </html>

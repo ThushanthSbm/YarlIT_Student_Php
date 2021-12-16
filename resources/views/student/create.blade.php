@@ -47,7 +47,7 @@
   @endforeach
 </select>
 <br><br>
-<label for="address">Address</label>
+<label for="address">Address :</label>
 <textarea name="address" id="address" cols="30" rows="5"placeholder="type address" value ="{{ old('address')}}" class="@error('address') is-invalid @enderror" >
 </textarea>
  @error('address')

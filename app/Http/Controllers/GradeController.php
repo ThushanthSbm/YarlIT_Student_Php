@@ -38,6 +38,13 @@ class GradeController extends Controller
     public function store(Request $request)
     {
         //
+
+        $validatedData = $request->validate([
+           
+            'gname' => ['required','in:1'],
+            
+            ]);
+
         $data=$request->all();
         $gna=$request->input('gname');
         $grade=new Grade();

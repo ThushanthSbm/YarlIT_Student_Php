@@ -38,6 +38,12 @@ class SubjectController extends Controller
     public function store(Request $request)
     {
         //
+        $validatedData = $request->validate([
+           
+         'sname' => ['required'],
+          
+            ]);
+
         $data=$request->all();
         $sna=$request->input('sname');
         $subject=new Subject();
