@@ -13,6 +13,9 @@
         <tr>
        <td> {{$subject->id}}</td>
    <td> {{$subject->subject_name}}</td>
+  <td> Subject Color: {{ $extra->color }}</td>
+              <td> Subject Index: {{ $extra->sub_index }}</td>
+             <td>   Subject Order: {{ $extra->order }}</td>
    <td><a href="{{route('subjects.show' ,$subject->id)}}">Show</a></td>
     <td><a href="{{route('subjects.edit' ,$subject->id)}}">Edit</a></td>
     <td>

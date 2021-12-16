@@ -17,6 +17,12 @@
   <span style="color:red"> {{ $message }}</span>
 @enderror
 <br><br>
+        <label for="color">Subject Color</label>
+        <input type="text" id="color" name="color"><br><br>
+        <label for="sub_index">Subject Index</label>
+        <input type="text" id="sub_index" name="sub_index"><br><br>
+        <label for="order">Subject Order</label>
+        <input type="text" id="order" name="order"><br><br>
 <input type="submit" value="Save">
 </body>
 </html>

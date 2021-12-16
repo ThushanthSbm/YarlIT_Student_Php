@@ -38,18 +38,42 @@ class SubjectController extends Controller
     public function store(Request $request)
     {
         //
-        $validatedData = $request->validate([
+        // $validatedData = $request->validate([
            
-         'sname' => ['required'],
+        //  'sname' => ['required'],
           
-            ]);
+        //     ]);
 
-        $data=$request->all();
-        $sna=$request->input('sname');
-        $subject=new Subject();
-        $subject->subject_name=$sna;
-        $subject->save();
-        return redirect()->route('subjects.index');
+        // $data=$request->all();
+        // $sna=$request->input('sname');
+        // $subject=new Subject();
+        // $subject->subject_name=$sna;
+        // $subject->save();
+        // return redirect()->route('subjects.index');
+
+        {
+            //
+            //validation
+            $this->validate($request,array(
+                'subject_name' => 'required|',
+                'color' => 'required|',
+                'sub_index' => 'required|',
+                'order' => 'required|numeric|max:200',
+            ));
+            $subject = new Subject();
+    
+            $subject->subject_name = $request->subject_name;
+            $color = $request->color;
+            $sub_index = $request->sub_index;
+            $order = $request->order;
+            $collection = collect(['color' => $color, 'sub_index' => $sub_index, 'order' => $order]);
+    
+            $extraa = $collection->toJson();
+            $subject->extra = $extraa;
+      
+            $subject->save();
+            return redirect()->route('subjects.index');
+        }
     }
 
     /**
@@ -61,9 +85,13 @@ class SubjectController extends Controller
     public function show($id)
     {
         //
+        // $subject = Subject::find($id);
+        // // return 
+        // return view('subject.show' ,compact('subject'));
+
         $subject = Subject::find($id);
-        // return 
-        return view('subject.show' ,compact('subject'));
+        $extra = json_decode($subject->extra);
+        return view('subject.show',compact('subject','extra'));
     }
 
     /**
@@ -75,8 +103,15 @@ class SubjectController extends Controller
     public function edit($id)
     {
         //
+        // $subject = Subject::find($id);
+        // return view('subject.edit' ,['subject' => $subject]);
+
         $subject = Subject::find($id);
-        return view('subject.edit' ,['subject' => $subject]);
+        $extra = json_decode($subject->extra);
+
+
+        //return the view and pass in to the var we perviously created
+        return view('subject.edit',['subject'=> $subject,'extra' => $extra]);
     }
 
     /**
@@ -89,13 +124,35 @@ class SubjectController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $sna=$request->input('sname');
-        $subject=new Subject();
-        $subject->subject_name=$sna;
-        $subject->save();
-        return redirect()->route('subjects.index');
-    }
+    //     $sna=$request->input('sname');
+    //     $subject=new Subject();
+    //     $subject->subject_name=$sna;
+    //     $subject->save();
+    //     return redirect()->route('subjects.index');
+    // }
 
+    $subject = Subject::find($id);
+        
+    $this->validate($request,array(
+        'subject_name' => 'required|',
+        'color' => 'required|',
+        'sub_index' => 'required|',
+        'order' => 'required|numeric|max:200',
+    ));
+
+   $subject->subject_name = $request->input('subject_name');
+
+    $color = $request->color;
+    $sub_index = $request->sub_index;
+    $order = $request->order;
+    $collection = collect(['color' => $color, 'sub_index' => $sub_index, 'order' => $order]);
+
+    $extraa = $collection->toJson();
+    $subject->extra = $extraa;
+
+   $subject->save();
+   return redirect()->route('subjects.index');
+}
     /**
      * Remove the specified resource from storage.
      *

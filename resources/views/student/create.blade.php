@@ -56,7 +56,7 @@
 <br><br>
 <label for="subject">Subjects</label><br>
 @foreach($subjects as $subject)
-<input type="checkbox" id="subject" name="subject[]" value="{{$subject->subject_name}}" >
+<input type="checkbox" id="subject" name="subject[]" value="{{$subject->subject_name}}"  >
 <label for="subject"> {{$subject->subject_name}}</label>
 @endforeach
 <!-- <input type="checkbox" id="Science" name="subject[]" value="Science">
