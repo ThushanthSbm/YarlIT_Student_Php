@@ -8,16 +8,7 @@
 </head>
 <body>
 <form action ="{{route('subjects.update' ,$subject->id)}}" method = "POST">
-@if (count($errors) > 0)
-           
-                <strong>Errors:</strong>
-                <ul> 
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>    
-                @endforeach
-                </ul>
-            
-        @endif
+
 @csrf
 @method('PUT')
 <label for="sname">Subject Name</label>

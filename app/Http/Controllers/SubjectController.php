@@ -56,6 +56,9 @@ class SubjectController extends Controller
             //validation
             $this->validate($request,array(
                 'sname' => 'required|',
+                'color' => 'required|',
+            'sub_index' => 'required|',
+            'order' => 'required|numeric|max:200',
                 
             ));
             $subject = new Subject();
@@ -132,13 +135,13 @@ class SubjectController extends Controller
     $subject = Subject::find($id);
         
     $this->validate($request,array(
-        'subject_name' => 'required|',
+        'sname' => 'required|',
         'color' => 'required|',
         'sub_index' => 'required|',
         'order' => 'required|numeric|max:200',
     ));
 
-   $subject->subject_name = $request->input('subject_name');
+   $subject->subject_name = $request->input('sname');
 
     $color = $request->color;
     $sub_index = $request->sub_index;
