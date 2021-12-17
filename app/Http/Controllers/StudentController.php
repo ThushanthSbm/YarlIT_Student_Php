@@ -48,7 +48,7 @@ class StudentController extends Controller
             'lname' => ['required ','min:5'],
             'gender' => ['required '],
             'address' => ['required' ,'min:5'],
-            'subject_id' => ['required','in:1'],
+            
             'birthday' => ['required','date','before:-18years'],
             'email' => ['email:rfc,dns'],
             'phone' => ['required','digits:10'],
@@ -78,7 +78,7 @@ class StudentController extends Controller
         $student->mail=$ma;
         $student->phone_id=$ph;
         $student->save();
-        return redirect()->route('students.index');
+        return redirect()->route('students.index')->with('message','save successfully');
     }
 
     /**

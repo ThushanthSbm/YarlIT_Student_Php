@@ -7,6 +7,10 @@
     <title>Document</title>
 </head>
 <body>
+@if(Session::has('message'))
+ <p style="color:green">{{Session::get('message')}}</p>
+@endif
+
     <h1>Student Index</h1>
     <br>
     @foreach ($students as $student)
