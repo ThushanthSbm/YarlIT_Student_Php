@@ -41,7 +41,7 @@ class GradeController extends Controller
 
         $validatedData = $request->validate([
            
-            'gname' => ['required','in:1'],
+            'gname' => ['required',],
             
             ]);
 

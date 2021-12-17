@@ -51,18 +51,16 @@ class SubjectController extends Controller
         // $subject->save();
         // return redirect()->route('subjects.index');
 
-        {
+        
             //
             //validation
             $this->validate($request,array(
-                'subject_name' => 'required|',
-                'color' => 'required|',
-                'sub_index' => 'required|',
-                'order' => 'required|numeric|max:200',
+                'sname' => 'required|',
+                
             ));
             $subject = new Subject();
     
-            $subject->subject_name = $request->subject_name;
+            $subject->subject_name = $request->sname;
             $color = $request->color;
             $sub_index = $request->sub_index;
             $order = $request->order;
@@ -74,7 +72,7 @@ class SubjectController extends Controller
             $subject->save();
             return redirect()->route('subjects.index');
         }
-    }
+    
 
     /**
      * Display the specified resource.
