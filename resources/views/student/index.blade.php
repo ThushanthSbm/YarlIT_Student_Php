@@ -161,12 +161,13 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-          </div>
+          
         
         <!-- /.row -->
         <div class="card-footer">
                 
 <a href="{{route('students.create')}}" class="btn btn-primary btn-lg">Student create</a></div>
+</div>
 
 </div>
 </div>              
