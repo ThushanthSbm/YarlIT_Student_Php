@@ -105,7 +105,7 @@
                       <!-- checkbox -->
                       <div class="form-group">
                         <!-- <div class="form-check"> -->
-<label for="subject" class=" @error('subject') is-invalid @enderror">Subjects</label><br>
+<label for="subject" >Subjects</label><br>
 @foreach($subjects as $subject)
 <input type="checkbox" id="subject" name="subject[]" value="{{$subject->subject_name}}"  >
 <label for="subject"> {{$subject->subject_name}}</label>
@@ -116,9 +116,7 @@
 <label for="Tamil"> Tamil</label>
 <input type="checkbox" id="English" name="subject[]" value="English">
 <label for="English"> English</label> -->
-@error('subject')
-    <div class="alert alert-danger">{{ $message }}</div>
-@enderror</div>
+</div>
                         </div>
                         <!-- </div> -->
 </div>

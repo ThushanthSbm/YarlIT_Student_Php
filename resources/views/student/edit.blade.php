@@ -118,7 +118,7 @@
                 
 <a href="{{route('students.index')}}" class="btn btn-primary btn-lg">Show All</a></div>
 
-
+</div>
 </form>
 </div>
 </div>
