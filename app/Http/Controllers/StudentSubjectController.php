@@ -52,7 +52,6 @@ class StudentSubjectController extends Controller
 
         $student=Student::find($studentid);
         $student->subjects()->sync($subject);
-        
         return redirect('students');
     }
 
