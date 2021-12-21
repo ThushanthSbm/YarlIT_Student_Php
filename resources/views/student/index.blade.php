@@ -74,7 +74,7 @@
     <br>
     @endforeach -->
 
-    <div class="card-body table-responsive p-6" style="height: 300px; background-color:#ffcccc">
+    <div class="card-body table-responsive p-6" style="height: 1000px; background-color:#ffcccc">
                 <table class="table table-head-fixed table-hover table-striped project">
                   <thead>
                     <tr style="color:brown;">
