@@ -11,7 +11,7 @@
                 @foreach($subjects as $subject)
 
                 <div class="form-check">
-                    <input  type="checkbox" id="  {{ $subject->id }}" name="subject[]" value="  {{ $subject->id }}" <?php
+                    <input  type="checkbox" id="{{ $subject->id }}" name="subject[]" value=" {{ $subject->id }}" <?php
                                                                                                                                             foreach ($studentSubjects as $stuSubject) {
                                                                                                                                                 if ($subject->subject_name == $stuSubject->subject_name) {
                                                                                                                                                     echo "checked";

@@ -79,7 +79,7 @@
                   <thead>
                     <tr style="color:brown;">
     
-        <th>ID</th><th>First Name</th><th>Last Name</th><th>Gender</th><th>Grade</th><th>Address</th><th>Subjects</th><th>Date OF Birth</th><th>Email</th><th>Mobile Number</th><th>Status</th><th>Actions</th></tr>
+        <th>ID</th><th>First Name</th><th>Last Name</th><th>Gender</th><th>Grade</th><th>Address</th><th>Subjects</th><th>Date OF Birth</th><th>Email</th><th>Mobile Number</th><th>Actions</th></tr>
         </thead>
          @foreach ($students as $student)
     <tr>
@@ -113,9 +113,9 @@
 <a href="#" class="next round">&#8250;</a>
 </form> -->
 
-<td class="project-state">
+<!-- <td class="project-state">
                           <span class="badge badge-success">Success</span>
-                      </td>
+                      </td> -->
                    
                     <td class="project-actions text-left">
                          

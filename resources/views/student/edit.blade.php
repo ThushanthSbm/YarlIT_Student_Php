@@ -76,7 +76,22 @@
 </div>
 <br><br>
 
+   <!-- {{ $student->subject_id}} -->
+<!-- <?php $sub=explode(',',$student->subject_id)?>
+<div class="form-group">
+<label for="subject">Subjects</label><br>
+@foreach($subjects as $subject)
 
+<input type="checkbox" id="subject" name="subject[]" value="{{$subject->subject_name}}"<?php
+    if(in_Array('$subject->subject_name',$sub)){
+       echo'checked';
+    }
+    ?> >
+<label for="subject"> {{$subject->subject_name}}</label>
+@endforeach
+</div>
+                        
+<br><br> -->
 
 <div class="form-group">
 <label for="birthday">Birthday:</label>
